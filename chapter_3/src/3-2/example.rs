@@ -41,7 +41,7 @@ fn mathematical_operation_example(){
 //boolean type example
 fn boolean_type_example(){
     let t = true;
-    let f: bool = false;// with explicit type annotation
+    let f: bool = false;// with explict type annotation
 }
 
 //character type example
@@ -57,9 +57,66 @@ fn tuple_type_example(){
     let tup:(i32, f64, u8) = (500, 6.4, 1);
     let (x, y, z) = tup;
     println!("The value y is {}", y);
-    
+
     let x: (i32, f64, u8) = (500, 6.4, 1);
     let five_hundred = x.0;
     let six_point_four = x.1;
     let one = x.2;
+}
+
+//Array Example
+fn array_example(){
+    let a = [1, 2, 3, 4, 5];
+    let first = a[0];
+    let seconde = a[1];
+
+
+    let months = ["January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"]; //Vector
+}
+
+//index overflow -> panicked!
+fn overflow_index_exmaple(){
+    let a = [1, 2, 3, 4, 5];
+    let index = 10;
+
+    let element = a[index]; //Panicked!
+
+    println!("The value of element is: {}", element);
+}
+
+
+//construction exmaple
+fn construction_example(){
+    let x = 6; // this is construction!
+}
+
+// expression error example
+fn expression_error_example() {
+    let x = (let y = 6); //this is error! (let y = 6) is not return to any!
+}
+
+//correction expression example
+fn correction_expression_example() {
+    let x = 5;
+
+    let y = {
+        let x = 3;
+        x + 1 // don't insert ";"(semicolon)
+    };// this is correct!! {}(block) is expression
+
+    println!("The value of y is: {}", y);
+}
+
+
+//return value fuction example
+fn return_value_fuction_example() -> i32{
+    5 // this is return 5(i32 type)
+}
+
+
+//use value fuction example
+fn use_value_fuction_example(){
+    let can_use = return_value_fuction_example(); // and we can use function!
+    println!("this value is {}", can_use);
 }
